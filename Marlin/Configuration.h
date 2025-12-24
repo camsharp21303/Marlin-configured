@@ -61,7 +61,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Cameron Sharp)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -88,7 +88,7 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_RAMPS_14_EFB
+  #define MOTHERBOARD BOARD_MKS_GEN_13
 #endif
 
 // @section serial
@@ -138,14 +138,14 @@
 //#define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-//#define CUSTOM_MACHINE_NAME "3D Printer"
+#define CUSTOM_MACHINE_NAME "Delta Zulu"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
 //#define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
 
 // @section stepper drivers
-
+//@toconfigure
 /**
  * Stepper Drivers
  *
@@ -917,7 +917,8 @@
 // @section delta
 
 // Enable for DELTA kinematics and configure below
-//#define DELTA
+//@toconfigure
+#define DELTA
 #if ENABLED(DELTA)
 
   // Make delta curves from many straight lines (linear interpolation).
@@ -1060,18 +1061,18 @@
 // Specify here all the endstop connectors that are connected to any endstop or probe.
 // Almost all printers will be using one per axis. Probes will use one or more of the
 // extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
-#define USE_XMIN_PLUG
-#define USE_YMIN_PLUG
-#define USE_ZMIN_PLUG
+//#define USE_XMIN_PLUG
+//#define USE_YMIN_PLUG
+//#define USE_ZMIN_PLUG
 //#define USE_IMIN_PLUG
 //#define USE_JMIN_PLUG
 //#define USE_KMIN_PLUG
 //#define USE_UMIN_PLUG
 //#define USE_VMIN_PLUG
 //#define USE_WMIN_PLUG
-//#define USE_XMAX_PLUG
-//#define USE_YMAX_PLUG
-//#define USE_ZMAX_PLUG
+#define USE_XMAX_PLUG
+#define USE_YMAX_PLUG
+#define USE_ZMAX_PLUG
 //#define USE_IMAX_PLUG
 //#define USE_JMAX_PLUG
 //#define USE_KMAX_PLUG
@@ -1243,7 +1244,7 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-//#define CLASSIC_JERK
+#define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK 10.0
   #define DEFAULT_YJERK 10.0
@@ -1711,9 +1712,9 @@
 
 // Direction of endstops when homing; 1=MAX, -1=MIN
 // :[-1,1]
-#define X_HOME_DIR -1
-#define Y_HOME_DIR -1
-#define Z_HOME_DIR -1
+#define X_HOME_DIR 1
+#define Y_HOME_DIR 1
+#define Z_HOME_DIR 1
 //#define I_HOME_DIR -1
 //#define J_HOME_DIR -1
 //#define K_HOME_DIR -1
